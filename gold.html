@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسعار الذهب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .datetime {
+            margin: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleDateString('ar-EG', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('datetime').textContent = 'آخر تحديث: ' + dateTimeString;
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <h1>أسعار الذهب</h1>
+    <div class="datetime" id="datetime"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>عيار الذهب</th>
+                <th>سعر الشراء</th>
+                <th>سعر البيع</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>عيار 24</td>
+                <td>200000</td>
+                <td>202000</td>
+            </tr>
+            <tr>
+                <td>عيار 22</td>
+                <td>180000</td>
+                <td>182000</td>
+            </tr>
+            <tr>
+                <td>عيار 21</td>
+                <td>170000</td>
+                <td>172000</td>
+            </tr>
+            <tr>
+                <td>عيار 18</td>
+                <td>150000</td>
+                <td>152000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
