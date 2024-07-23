@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة الأسعار الجديدة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>مرحبًا بكم في صفحة الأسعار الجديدة</h1>
     <p>هذا المحتوى يتم عرضه من GitHub.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>العملة</th>
+                <th>سعر الشراء</th>
+                <th>سعر البيع</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>الدولار الأمريكي</td>
+                <td>3500</td>
+                <td>3550</td>
+            </tr>
+            <tr>
+                <td>اليورو</td>
+                <td>4000</td>
+                <td>4050</td>
+            </tr>
+            <!-- أضف المزيد من الصفوف حسب الحاجة -->
+        </tbody>
+    </table>
 </body>
 </html>
