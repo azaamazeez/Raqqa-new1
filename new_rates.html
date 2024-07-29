@@ -3,61 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة الأسعار الجديدة</title>
+    <title>أسعار الصرف</title>
     <style>
-        /* نفس تنسيق CSS السابق */
-    </style>
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const dateTimeString = now.toLocaleDateString('ar-EG', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            document.getElementById('datetime').textContent = 'آخر تحديث: ' + dateTimeString;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
-        setInterval(updateDateTime, 1000);
-    </script>
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: 2px solid #0056b3;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: white;
+            color: #007bff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        main {
+            padding: 20px;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 80vh;
+        }
+    </style>
 </head>
-<body onload="updateDateTime()">
-    <h1>مرحبًا بكم في صفحة الأسعار الجديدة</h1>
-    <div class="datetime" id="datetime"></div>
-    <div id="rates-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>العملة</th>
-                    <th>سعر الشراء</th>
-                    <th>سعر البيع</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>الدولار الأمريكي</td>
-                    <td>4200</td>
-                    <td>3550</td>
-                </tr>
-                <tr>
-                    <td>اليورو</td>
-                    <td>4000</td>
-                    <td>4050</td>
-                </tr>
-                <tr>
-                    <td>الريال السعودي</td>
-                    <td>930</td>
-                    <td>940</td>
-                </tr>
-                <tr>
-                    <td>الليرة التركية</td>
-                    <td>450</td>
-                    <td>460</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<body>
+    <header>
+        <h1>أسعار الصرف</h1>
+        <button onclick="window.location.href='Home.html'">العودة إلى الصفحة الرئيسية</button>
+        <button onclick="window.location.href='gold.html'">أسعار الذهب</button>
+    </header>
+    <main>
+        <iframe id="exchangeRatesIframe" src="https://azaamazeez.github.io/Raqqa-new1/new_rates.html" frameborder="0"></iframe>
+    </main>
+    <script>
+        function refreshIframe() {
+            var iframe = document.getElementById('exchangeRatesIframe');
+            iframe.src = iframe.src; // إعادة تحميل الـ iframe
+        }
+        setInterval(refreshIframe, 10000); // تحديث كل 10 ثوانٍ
+    </script>
 </body>
 </html>
